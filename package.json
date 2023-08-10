@@ -1,0 +1,25 @@
+{
+  "name": "react-next-vercel",
+  "version": "1.0.0",
+  "description": "Modelo de desenvolvimento utilizando react e next com hospedagem no vercel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veridianobarroso/react-next-vercel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veridianobarroso/react-next-vercel/issues"
+  },
+  "homepage": "https://github.com/veridianobarroso/react-next-vercel#readme",
+  "dependencies": {
+    "next": "^13.4.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
