@@ -1,12 +1,35 @@
-import { useState } from "react"
+import React, { useEffect, useState } from "react";
+import api from '../services/api';
 
-function Home(){
-    return(
-        <div>
-            <h1>Home</h1>
-            <Contador />
-        </div>
-    ) 
+export default function Home(){
+    
+  const config = {
+    headers:{
+      'Accept':'application/json'
+    }
+  };
+
+  const [produtos, setProdutos] = useState([]);
+  useEffect(() => {
+    api.get("/editais/@site",config)
+       .then((response) => {
+         console.log(response);
+         setProdutos(response.data)
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro : " + err);
+      });
+  }, []);
+  return (
+    
+    <div className="produto-container">
+       <h1>Relação de Produtos</h1>
+        <ul>
+           {produtos['@id']}
+        </ul>
+        <Contador/>
+    </div>
+  );
 
 }
 
@@ -25,5 +48,3 @@ function Contador(){
         </div>
     )
 }
-
-export default Home
